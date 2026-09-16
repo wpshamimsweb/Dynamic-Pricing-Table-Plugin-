@@ -1,0 +1,664 @@
+/* ==========================================================
+   R3 Pricing Table — Admin Panel Styles
+   ========================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap');
+
+/* ── Wrap ─────────────────────────────────────────────────── */
+.r3pt-admin-wrap {
+    font-family: 'Outfit', -apple-system, sans-serif;
+    max-width: 1100px;
+}
+
+.r3pt-admin-wrap h1 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    color: #1a2540;
+}
+
+/* ── Shortcode Banner ─────────────────────────────────────── */
+.r3pt-shortcode-banner {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: linear-gradient(135deg, #1a2540 0%, #2b3f6b 100%);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    box-shadow: 0 2px 12px rgba(26,37,64,0.18);
+}
+
+.r3pt-shortcode-banner code {
+    background: rgba(255,255,255,0.15);
+    color: #f0e6d2;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────── */
+.r3pt-tabs {
+    background: #fff;
+    border: 1px solid #dde1e9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(26,37,64,0.07);
+    margin-top: 16px;
+}
+
+.r3pt-tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    background: linear-gradient(135deg, #1a2540 0%, #243058 100%);
+    gap: 0;
+    border-bottom: none;
+}
+
+.r3pt-tab-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.65);
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 14px 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    letter-spacing: 0.02em;
+    border-bottom: 3px solid transparent;
+    position: relative;
+}
+
+.r3pt-tab-btn:hover {
+    color: #fff;
+    background: rgba(255,255,255,0.08);
+}
+
+.r3pt-tab-btn.active {
+    color: #fff;
+    border-bottom-color: #e07040;
+    background: rgba(224, 112, 64, 0.15);
+}
+
+.r3pt-tab-panel {
+    display: none;
+    padding: 28px 30px 10px;
+}
+
+.r3pt-tab-panel.active {
+    display: block;
+}
+
+/* ── Form Section ─────────────────────────────────────────── */
+.r3pt-form-section {
+    max-width: 900px;
+}
+
+.r3pt-field {
+    margin-bottom: 22px;
+}
+
+.r3pt-field label {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    color: #1a2540;
+    margin-bottom: 6px;
+    letter-spacing: 0.01em;
+}
+
+.r3pt-field .description {
+    margin-top: 5px;
+    font-size: 12px;
+    color: #777;
+}
+
+.r3pt-field-row {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.r3pt-field-half {
+    flex: 1;
+    min-width: 200px;
+}
+
+.r3pt-slug-display {
+    background: #f5f5f5;
+    border: 1px solid #ddd;
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1a2540;
+    font-weight: 700;
+}
+
+/* ── Column Header Rows ───────────────────────────────────── */
+.r3pt-column-header-row {
+    background: #f8f9fb;
+    border: 1px solid #e2e6ef;
+    border-radius: 8px;
+    padding: 18px 20px;
+    margin-bottom: 16px;
+}
+
+.r3pt-column-header-row h3 {
+    margin: 0 0 14px;
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2540;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+}
+
+/* Icon preview */
+.r3pt-icon-preview-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.r3pt-icon-preview-label {
+    font-size: 12px;
+    color: #777;
+    font-weight: 600;
+}
+
+.r3pt-icon-preview {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #1a2540;
+    border-radius: 6px;
+    padding: 8px;
+    width: 48px;
+    height: 48px;
+    transition: background 0.2s;
+}
+
+.r3pt-icon-preview svg {
+    display: block;
+}
+
+.r3pt-custom-svg-field {
+    margin-top: 12px;
+}
+
+/* ── Pricing Rows Table ───────────────────────────────────── */
+.r3pt-rows-note {
+    margin-bottom: 16px;
+    font-size: 13px;
+    color: #555;
+}
+
+.r3pt-rows-table-wrap {
+    overflow-x: auto;
+    border: 1px solid #dde1e9;
+    border-radius: 8px;
+    margin-bottom: 14px;
+}
+
+.r3pt-rows-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 560px;
+}
+
+.r3pt-rows-table thead {
+    background: linear-gradient(135deg, #1a2540, #2b3f6b);
+}
+
+.r3pt-rows-table thead th {
+    color: #fff;
+    font-family: 'Outfit', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    text-align: left;
+    border: none;
+}
+
+.r3pt-rows-table tbody tr {
+    border-bottom: 1px solid #eee;
+    transition: background 0.15s;
+}
+
+.r3pt-rows-table tbody tr:hover {
+    background: #f5f8ff;
+}
+
+.r3pt-rows-table tbody td {
+    padding: 8px 10px;
+    vertical-align: middle;
+}
+
+.r3pt-rows-table input[type="text"] {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.r3pt-col-handle {
+    width: 36px;
+    text-align: center !important;
+}
+
+.r3pt-drag-handle {
+    cursor: grab;
+    color: #bbb;
+    font-size: 18px;
+    text-align: center;
+    user-select: none;
+}
+
+.r3pt-drag-handle:active {
+    cursor: grabbing;
+}
+
+.r3pt-col-remove {
+    width: 48px;
+    text-align: center !important;
+}
+
+.r3pt-remove-row {
+    color: #c0392b !important;
+    border-color: #c0392b !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    min-height: unset !important;
+    cursor: pointer;
+}
+
+.r3pt-remove-row:hover {
+    background: #c0392b !important;
+    color: #fff !important;
+}
+
+#r3pt-add-row {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+}
+
+/* ── Colors Grid ──────────────────────────────────────────── */
+.r3pt-colors-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px 30px;
+}
+
+.r3pt-color-field label {
+    font-size: 13px;
+}
+
+/* WP Color picker override */
+.r3pt-colors-grid .wp-picker-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* ── Slider ───────────────────────────────────────────────── */
+.r3pt-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.r3pt-slider-wrap input[type="range"] {
+    flex: 1;
+    max-width: 220px;
+    accent-color: #e07040;
+}
+
+.r3pt-slider-wrap input[type="number"] {
+    width: 60px;
+}
+
+/* ── Media Uploader ───────────────────────────────────────── */
+.r3pt-media-uploader {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.r3pt-logo-preview {
+    width: 180px;
+    min-height: 80px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    overflow: hidden;
+}
+
+.r3pt-logo-preview img {
+    max-height: 80px;
+    max-width: 160px;
+    object-fit: contain;
+}
+
+.r3pt-logo-placeholder {
+    font-size: 12px;
+    color: #aaa;
+    text-align: center;
+    padding: 10px;
+}
+
+.r3pt-media-uploader .button {
+    width: fit-content;
+}
+
+/* ── Form Footer ──────────────────────────────────────────── */
+.r3pt-form-footer {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 20px 30px;
+    background: #f8f9fb;
+    border-top: 1px solid #e2e6ef;
+    border-radius: 0 0 10px 10px;
+}
+
+/* ── Shortcode Snippet ────────────────────────────────────── */
+.r3pt-shortcode-snippet {
+    background: #f0f4ff;
+    color: #1a2540;
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    border: 1px solid #d0d8f0;
+}
+
+/* ── Copy Button ──────────────────────────────────────────── */
+.r3pt-copy-btn {
+    background: #e07040;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 4px 10px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-family: 'Outfit', sans-serif;
+}
+
+.r3pt-copy-btn:hover {
+    background: #c25a28;
+}
+
+.r3pt-copy-btn.copied {
+    background: #27ae60;
+}
+
+/* ── Row Actions ──────────────────────────────────────────── */
+.r3pt-row-actions {
+    display: flex;
+    gap: 6px;
+    flex-wrap: nowrap;
+}
+
+.r3pt-btn-danger {
+    color: #c0392b !important;
+    border-color: #c0392b !important;
+}
+
+.r3pt-btn-danger:hover {
+    background: #c0392b !important;
+    color: #fff !important;
+}
+
+/* ── Empty State ──────────────────────────────────────────── */
+.r3pt-empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    background: #fff;
+    border: 1px solid #dde1e9;
+    border-radius: 12px;
+    margin-top: 20px;
+}
+
+.r3pt-empty-icon {
+    font-size: 52px;
+    margin-bottom: 16px;
+    line-height: 1;
+}
+
+.r3pt-empty-state h2 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 800;
+    color: #1a2540;
+    margin-bottom: 8px;
+}
+
+.r3pt-empty-state p {
+    color: #777;
+    font-size: 15px;
+    margin-bottom: 24px;
+}
+
+/* ── Toggle Switch ────────────────────────────────────────── */
+.r3pt-toggle-field {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    flex-wrap: wrap;
+}
+
+.r3pt-toggle-label {
+    display: block;
+    font-weight: 700 !important;
+    min-width: 260px;
+}
+
+.r3pt-switch {
+    position: relative;
+    display: inline-block;
+    width: 50px;
+    height: 27px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.r3pt-switch input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+/* Hide the hidden sentinel input (value="0") */
+.r3pt-switch input[type="hidden"] {
+    display: none;
+}
+
+.r3pt-switch-slider {
+    position: absolute;
+    cursor: pointer;
+    inset: 0;
+    background: #ccd2e0;
+    border-radius: 27px;
+    transition: background 0.25s;
+}
+
+.r3pt-switch-slider::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    left: 3.5px;
+    top: 3.5px;
+    background: #fff;
+    border-radius: 50%;
+    transition: transform 0.25s;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.22);
+}
+
+.r3pt-switch input[type="checkbox"]:checked + .r3pt-switch-slider {
+    background: #e07040;
+}
+
+.r3pt-switch input[type="checkbox"]:checked + .r3pt-switch-slider::before {
+    transform: translateX(23px);
+}
+
+/* ── Visibility Rows ──────────────────────────────────────── */
+.r3pt-visibility-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 14px 18px;
+    border: 1px solid #e2e6ef;
+    border-radius: 8px;
+    background: #f8f9fb;
+    margin-bottom: 10px;
+    transition: background 0.15s;
+}
+
+.r3pt-visibility-row:hover {
+    background: #f0f4ff;
+}
+
+.r3pt-visibility-info {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+}
+
+.r3pt-visibility-info strong {
+    font-family: 'Outfit', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2540;
+}
+
+.r3pt-visibility-info .description {
+    font-size: 12px;
+    color: #777;
+    margin: 0;
+}
+
+/* ── Background Type Radio Cards ─────────────────────────── */
+.r3pt-bg-type-radios {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.r3pt-radio-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 24px;
+    border: 2px solid #dde1e9;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: #f8f9fb;
+    font-family: 'Outfit', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: #555;
+    min-width: 100px;
+}
+
+.r3pt-radio-card input[type="radio"] {
+    display: none;
+}
+
+.r3pt-radio-card:hover {
+    border-color: #e07040;
+    background: #fff5f0;
+    color: #e07040;
+}
+
+.r3pt-radio-card.active,
+.r3pt-radio-card:has(input:checked) {
+    border-color: #e07040;
+    background: linear-gradient(135deg, #fff5f0, #fff);
+    color: #e07040;
+    box-shadow: 0 2px 10px rgba(224,112,64,0.18);
+}
+
+.r3pt-radio-icon {
+    font-size: 24px;
+    line-height: 1;
+}
+
+/* ── Background Sections ──────────────────────────────────── */
+.r3pt-bg-section {
+    padding: 20px;
+    background: #f8f9fb;
+    border: 1px solid #e2e6ef;
+    border-radius: 8px;
+    margin-bottom: 16px;
+}
+
+.r3pt-bg-section h3 {
+    margin: 0 0 14px;
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a2540;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.r3pt-bg-image-preview {
+    min-height: 60px;
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fafafa;
+    overflow: hidden;
+    margin-bottom: 10px;
+    max-width: 320px;
+    padding: 8px;
+}
+
+/* ── Exosome Row buttons ──────────────────────────────────── */
+.r3pt-remove-exosome-row {
+    color: #c0392b !important;
+    border-color: #c0392b !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    line-height: 1 !important;
+    min-height: unset !important;
+    cursor: pointer;
+}
+
+.r3pt-remove-exosome-row:hover {
+    background: #c0392b !important;
+    color: #fff !important;
+}
+
+#r3pt-add-exosome-row {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    margin-top: 2px;
+}
+
+/* ── Row placeholder for sortable ────────────────────────── */
+.r3pt-row-placeholder {
+    background: #e8f0fe;
+    border: 2px dashed #a0b4e8;
+    height: 42px;
+}

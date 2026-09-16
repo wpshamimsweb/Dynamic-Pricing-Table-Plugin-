@@ -1,0 +1,440 @@
+/* ==========================================================
+   R3 Pricing Table — Frontend Styles  v2.1
+   Pixel-precise match to R3 Stem Cell design reference
+   Colors driven by CSS custom properties (set per-instance)
+   ========================================================== */
+
+/* ── Wrapper / Card ───────────────────────────────────────── */
+.r3pt-wrapper {
+    font-family: 'Outfit', 'Segoe UI', Arial, sans-serif;
+    background-color: var(--r3pt-bg, #ffffff);
+    padding: 28px 24px 24px;
+    max-width: 780px;
+    margin: 0 auto;
+    box-sizing: border-box;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 2px 20px rgba(26, 37, 64, 0.10);
+}
+
+/* ── Background: Video ────────────────────────────────────── */
+.r3pt-has-video-bg {
+    background-color: var(--r3pt-bg, #1a2540);
+}
+
+.r3pt-video-bg-wrap {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.r3pt-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+}
+
+.r3pt-bg-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* ── Content layer (sits above bg) ───────────────────────── */
+.r3pt-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* ── Logo Area ────────────────────────────────────────────── */
+.r3pt-logo-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 14px;
+}
+
+.r3pt-logo-img {
+    height: 52px;
+    width: auto;
+    object-fit: contain;
+}
+
+.r3pt-logo-default svg {
+    display: block;
+}
+
+.r3pt-logo-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: #c97348;
+    line-height: 1.25;
+    white-space: pre-line;
+    letter-spacing: 0.03em;
+}
+
+/* ── Header ───────────────────────────────────────────────── */
+.r3pt-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 14px;
+}
+
+.r3pt-header-icon-col {
+    flex-shrink: 0;
+}
+
+.r3pt-header-text-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.r3pt-location-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(26px, 5vw, 42px);
+    font-weight: 900;
+    letter-spacing: 0.01em;
+    line-height: 1.05;
+    margin: 0 0 2px 0;
+    text-transform: uppercase;
+    padding: 0;
+    border: none;
+    background: none;
+}
+
+.r3pt-effective-line {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(13px, 2vw, 16px);
+    font-weight: 500;
+    color: #4a5568;
+    margin: 0;
+    padding-left: 4px;
+    letter-spacing: 0.01em;
+}
+
+.r3pt-effective-date {
+    color: var(--r3pt-date-color, #e07040);
+    font-weight: 700;
+}
+
+/* ── Table Wrapper ────────────────────────────────────────── */
+.r3pt-table-wrapper {
+    border-radius: var(--r3pt-radius, 8px);
+    overflow: hidden;
+    border: 1px solid #e2e8f0;
+    margin-bottom: 16px;
+}
+
+.r3pt-exosome-wrapper {
+    margin-top: 16px; /* Gap between main table and exosome table */
+}
+
+/* ── Table ────────────────────────────────────────────────── */
+.r3pt-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+/* ── Table Header ─────────────────────────────────────────── */
+.r3pt-table thead tr {
+    background-color: var(--r3pt-thead-bg, #dbe6f5);
+}
+
+.r3pt-th-cell {
+    background-color: var(--r3pt-thead-bg, #dbe6f5);
+    padding: 11px 8px;
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid rgba(26, 64, 130, 0.12);
+}
+
+.r3pt-th-cell:last-child {
+    border-right: none;
+}
+
+/* Price / USD column header — orange */
+.r3pt-th-price {
+    background-color: var(--r3pt-price-col-bg, #e07040) !important;
+}
+
+.r3pt-th-inner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+}
+
+.r3pt-th-icon {
+    flex-shrink: 0;
+}
+
+.r3pt-th-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(9px, 1.4vw, 12px);
+    font-weight: 800;
+    color: #1a2540;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Removed forced white text on price header so it matches other headers */
+
+
+/* ── Table Body ───────────────────────────────────────────── */
+.r3pt-table tbody tr {
+    border-bottom: 1px solid #e8eef6;
+    transition: background-color 0.15s ease;
+}
+
+.r3pt-table tbody tr:nth-child(odd) {
+    background-color: var(--r3pt-row-odd-bg, #ffffff);
+}
+
+.r3pt-table tbody tr:nth-child(even) {
+    background-color: var(--r3pt-row-even-bg, #f0f5fc);
+}
+
+.r3pt-table tbody tr:last-child {
+    border-bottom: none;
+}
+
+.r3pt-table tbody tr:not(.r3pt-exosome-header-row):hover {
+    background-color: #e8f0fb !important;
+}
+
+.r3pt-table tbody td {
+    padding: 9px 12px;
+    font-size: clamp(12px, 1.7vw, 15px);
+    font-weight: 600;
+    color: var(--r3pt-text-color, #1a2540);
+    text-align: center;
+    vertical-align: middle;
+    border-right: 1px solid #e8eef6;
+}
+
+.r3pt-table tbody td:last-child {
+    border-right: none;
+}
+
+/* ── Cell Count Column ────────────────────────────────────── */
+.r3pt-td-cell-count {
+    text-align: left !important;
+    padding-left: 12px !important;
+}
+
+.r3pt-cell-count-inner {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+/* Row dot icon — the orange circle used in every row */
+.r3pt-row-svg-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.r3pt-row-svg-icon svg {
+    display: block;
+    width: 22px;
+    height: 22px;
+}
+
+.r3pt-cell-count-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(12px, 1.7vw, 15px);
+    font-weight: 700;
+    color: var(--r3pt-text-color, #1a2540);
+    letter-spacing: 0.01em;
+}
+
+/* ── Price Column ─────────────────────────────────────────── */
+.r3pt-price-cell {
+    color: var(--r3pt-price-color, #e07040) !important;
+    font-weight: 700 !important;
+    font-size: clamp(12px, 1.7vw, 15px) !important;
+}
+
+/* ── Exosome Section ──────────────────────────────────────── */
+.r3pt-exosome-header-row {
+    background-color: var(--r3pt-exo-header-bg, #1a2540) !important;
+}
+
+.r3pt-exosome-header-row:hover {
+    background-color: var(--r3pt-exo-header-bg, #1a2540) !important;
+}
+
+.r3pt-exosome-header-cell {
+    padding: 11px 14px !important;
+    border-right: none !important;
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    text-align: left !important;
+}
+
+.r3pt-exosome-header-inner {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.r3pt-exosome-header-icon {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.r3pt-exosome-header-label {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(11px, 1.6vw, 14px);
+    font-weight: 800;
+    color: #ffffff;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+/* Exosome data rows inherit table stripe */
+.r3pt-exosome-row td {
+    font-size: clamp(12px, 1.7vw, 14px);
+}
+
+/* ── Footer Box ───────────────────────────────────────────── */
+.r3pt-footer-box {
+    border: 1.5px solid #c5d8f0;
+    border-radius: 8px;
+    padding: 12px 16px;
+    background: #eaf2fd;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 10px;
+}
+
+.r3pt-footer-icon-wrap {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.r3pt-footer-notes {
+    flex: 1;
+}
+
+.r3pt-footer-notes p {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(11px, 1.5vw, 13px);
+    font-weight: 500;
+    color: #2d3a52;
+    margin: 0 0 2px;
+    line-height: 1.5;
+}
+
+.r3pt-footer-notes p:last-child {
+    margin-bottom: 0;
+}
+
+/* ── Warning Row ──────────────────────────────────────────── */
+.r3pt-warning-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+.r3pt-warning-icon {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+}
+
+.r3pt-warning-badge {
+    display: inline-block;
+    background-color: var(--r3pt-warning-bg, #1a2540);
+    color: var(--r3pt-warning-text, #ffffff);
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(11px, 1.4vw, 12px);
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 5px 14px;
+    border-radius: 5px;
+}
+
+/* ── Responsive ───────────────────────────────────────────── */
+@media (max-width: 600px) {
+    .r3pt-wrapper {
+        padding: 18px 10px 18px;
+        border-radius: 6px;
+    }
+
+    .r3pt-th-inner {
+        flex-direction: column;
+        gap: 3px;
+    }
+
+    .r3pt-th-label {
+        font-size: 8px;
+        letter-spacing: 0.03em;
+        white-space: normal;
+    }
+
+    .r3pt-table tbody td {
+        padding: 7px 5px;
+        font-size: 11px;
+    }
+
+    .r3pt-td-cell-count {
+        padding-left: 6px !important;
+    }
+
+    .r3pt-cell-count-label {
+        font-size: 11px;
+    }
+
+    .r3pt-row-svg-icon svg {
+        width: 18px;
+        height: 18px;
+    }
+
+    .r3pt-cell-count-inner {
+        gap: 5px;
+    }
+
+    .r3pt-warning-badge {
+        font-size: 9px;
+        padding: 4px 8px;
+    }
+
+    .r3pt-exosome-header-label {
+        font-size: 10px;
+    }
+
+    .r3pt-footer-box {
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .r3pt-location-title {
+        font-size: 22px;
+    }
+
+    .r3pt-header {
+        margin-bottom: 16px;
+    }
+}
